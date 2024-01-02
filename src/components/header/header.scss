@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    &__logo {
+        background: linear-gradient(180deg, #FF9C1A 0%, #ED250A 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: Pacifico;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        span {
+            -webkit-text-fill-color: #000;
+            font-family: Pacifico;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        padding: 10px;
+        border-radius: 50px;
+        background: #EBF2FA;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+}
+
+
