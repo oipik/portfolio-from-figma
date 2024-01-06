@@ -1,0 +1,21 @@
+.title {
+    display: inline-block;
+    color: #0B0909;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px; 
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url("../../images/icons/line.svg");
+        top: 17px;
+        right: -280px;
+        width: 252px;
+        height: 4px;
+    }
+}

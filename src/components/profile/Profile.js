@@ -4,7 +4,7 @@ import "./profile.scss";
 
 const Profile = () => {
     return (
-        <div className="profile">
+        <section className="profile">
             <img className="profile__photo" src={profile} alt="photo profile" />
             <div className="profile__wrapper"></div>
             <div className="profile__data">
@@ -47,9 +47,11 @@ const Profile = () => {
                             Nairobi, Kenya
                         </li>
                     </ul>
+                    <button className="profile__resume">Download Resume</button>
                 </div>
+                
             </div>
-        </div>
+        </section>
     )
 }
 

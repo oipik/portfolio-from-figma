@@ -6,8 +6,15 @@ body {
 }
 
 .wrapper {
-    width: 1242px;
+    width: 1240px;
     height: 500px;
     margin: 30px auto;
-    padding: 30px 100px 50px 100px;
+}
+
+.content {
+    display: flex;
+}
+.info {
+    width: 820px;
+    max-width: 100%;
 }
