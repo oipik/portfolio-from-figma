@@ -5,10 +5,12 @@
     border-radius: 20px;
     background: #FFF;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
-    padding: 30px 110px 30px 70px;
+    overflow-y: hidden;
+    &__inner {
+        padding: 30px 110px 35px 70px;
+    }
     &__subtitles {
-        display: flex;
-        justify-content: space-between
+        padding-left: 25px;        
     }
     &__subtitle {
         font-family: Poppins;
@@ -32,6 +34,9 @@
         &:nth-child(1)::before {
             background-image: url("../../../images/icons/resume/education.svg");
         }
+        &:nth-child(2) {
+            margin-left: 190px;
+        }
         &:nth-child(2)::before {
             background-image: url("../../../images/icons/resume/eperience.svg");
         }
@@ -39,7 +44,7 @@
     &__history {
         display: flex;
         flex-wrap: wrap;
-        gap: 60px;
+        gap: 25px 55px;
     }
     &__item {
         width: 290px;
@@ -63,6 +68,53 @@
     &__text {
         font-weight: 500;
         margin-top: 8px;
+    }
+    &__skills {
+        height: 100%;
+        background: #F8FBFB;
+        padding: 0px 110px 0px 70px;
+        display: flex;
+    }
+    &__hard {
+        width: 290px;
+        max-width: 100%;
+        &--title {
+            font-family: Poppins;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 46px; /* 166.667% */
+            letter-spacing: 0.693px;
+            margin-bottom: 10px;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+            &--item {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; 
+            letter-spacing: 0.24px;
+            display: inline-flex;
+            padding: 4px 8px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background: #E1E8EF;
+        }
+        &--soft {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+    &__soft {
+        width: 270px;
+        max-width: 100%;
+        margin-left: 58px;
     }
 }
 

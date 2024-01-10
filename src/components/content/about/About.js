@@ -5,7 +5,6 @@ import "./about.scss";
 const About = () => {
     return (
         <section className="about">
-            {/* <h2 className="about__title">ABOUT ME</h2> */}
             <Title title={"ABOUT ME"}/>
             <p className="about__me">
                 Hello there! I'm thrilled to welcome you to my portfolio. I am a passionate and versatile

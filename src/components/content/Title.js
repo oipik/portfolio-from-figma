@@ -1,8 +1,8 @@
 import "./title.scss";
 
-const Title = ({title}) => {
+const Title = ({title, style}) => {
     return (
-        <h2 className="title">{title}</h2>
+        <h2 className="title" style={style ? style : null}>{title}</h2>
     )
 }
 
