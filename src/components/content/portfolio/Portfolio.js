@@ -11,7 +11,7 @@ import "./portfolio.scss";
 const Portfolio = () => {
     return (
         <section className="portfolio">
-            <Title title={"Portfolio"} style={{"margin-bottom" : "0"}}/>
+            <Title title={"Portfolio"} style={{"marginBottom" : "0"}}/>
             <ul className="portfolio__nav">
                 <li className="portfolio__item">All</li>
                 <li className="portfolio__item">App Development</li>

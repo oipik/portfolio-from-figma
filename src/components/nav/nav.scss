@@ -18,12 +18,18 @@
         width: 80px;
         height: 80px;
         border-radius: 20px;
-        background: #E1E8EF;
+        background-color: #E1E8EF;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         cursor: pointer;
+        &--active {
+            background: linear-gradient(91deg, #FF9C1A 7.92%, #E80505 108.2%);
+            .nav__link {
+                color: #FFF
+            } 
+        }
     }
     &__link {
         color: #000;
@@ -34,11 +40,3 @@
     }
 }
 
-// .active {
-//     .nav__item {
-//         background: linear-gradient(91deg, #FF9C1A 7.92%, #E80505 108.2%);
-//     }
-//     .nav__link {
-//         color: #FFF;
-//     }
-// }

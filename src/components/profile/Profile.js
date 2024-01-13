@@ -36,11 +36,11 @@ const Profile = () => {
                     <ul className="contacts__list">
                         <li className="contacts__phone">
                             <span>Phone</span><br />
-                            +254723909353
+                            <a className="contacts__number" href="tel:+254723909353">+254723909353</a>
                         </li>
                         <li className="contacts__email">
                             <span>Email</span><br />
-                            beatricewambuimbugua@gmail.com
+                            <a className="contacts__mailto" href="mailto:mail@htmlacademy.ru">beatricewambuimbugua@gmail.com</a>
                         </li>
                         <li className="contacts__location">
                             <span>Location</span><br />

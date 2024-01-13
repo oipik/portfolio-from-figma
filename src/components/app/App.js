@@ -1,14 +1,21 @@
+import { useSelector } from 'react-redux';
 
 import Header from '../header/Header';
 import Profile from '../profile/Profile';
 import Nav from '../nav/Nav';
-// import About from '../content/about/About';
+import About from '../content/about/About';
 import Resume from '../content/resume/Resume';
 import Portfolio from '../content/portfolio/Portfolio';
+import Contact from '../content/contact/Contact';
 
 import './app.scss';
 
 function App() {
+
+    const activeState = useSelector(state => state.activeState);
+
+    const array = [<About/>, <Resume />, <Portfolio />, <Contact />];
+
     return (
         <div className="wrapper">
             <div className="inner">
@@ -17,9 +24,9 @@ function App() {
                     <Profile />
                     <div className="info">
                         <Nav />
-                        {/* <About/> */}
-                        {/* <Resume /> */}
-                        <Portfolio />
+                        {
+                            array[activeState]
+                        }
                     </div>
                 </div>
             </div>
