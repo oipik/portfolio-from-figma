@@ -55,6 +55,7 @@
             font-size: 16px;
             letter-spacing: 0.4px;
             position: relative;
+            margin-bottom: -5px;
             &::before {
                 content: "";
                 position: absolute;
@@ -111,7 +112,7 @@
                 font-weight: 600;
                 line-height: 20px;
                 cursor: pointer;
-                &:active {
+                &:hover {
                     background: linear-gradient(91deg, #FF9C1A 7.92%, #E80505 108.2%);
                     color: #FFF;
                 }

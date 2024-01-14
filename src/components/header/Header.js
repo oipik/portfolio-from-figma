@@ -1,4 +1,4 @@
-import switcher from "../../images/icons/switcher.png"
+import { switcher } from "../../images/images"
 
 import "./header.scss";
 

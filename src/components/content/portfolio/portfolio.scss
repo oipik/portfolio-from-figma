@@ -19,6 +19,9 @@
         &:first-child {
             margin-left: 0;
         }
+        &--active {
+            color: #ED2B0A;
+        }
     }
     &__projects {
         margin-top: 15px;
@@ -35,16 +38,16 @@
         border-radius: 8px;
         font-family: Poppins;
         font-weight: 400;
-        &:nth-child(3) {
-            margin-top: -50px;
-        }
-        &:nth-child(5) {
-            margin-top: -100px;
-        }
-        &--heighter {
-            background-color: #FFEED9;
-            height: 200px;
-        }
+        // &:nth-child(3) {
+        //     margin-top: -50px;
+        // }
+        // &:nth-child(5) {
+        //     margin-top: -100px;
+        // }
+        // &--heighter {
+        //     background-color: #FFEED9;
+        //     height: 200px;
+        // }
     }
     &__img {
         margin-bottom: 5px;

@@ -1,14 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { data } from "../nav/Nav";
-
+import { home, resume, work, contacts, homeActive, resumeActive, workActive, contactsActive } from "../../images/images";
 
 const initialState = {
-    data,
+    data: [
+        { svg: home, svgActive: homeActive, descr: "Home", active: true },
+        { svg: resume, svgActive: resumeActive, descr: "Resume", active: false },
+        { svg: work, svgActive: workActive, descr: "Work", active: false },
+        { svg: contacts, svgActive: contactsActive, descr: "Contact", active: false },
+    ],
     activeState: 0,
 }
 
-const filterSlice = createSlice({
-    name: "filters",
+const navSlice = createSlice({
+    name: "filtersNav",
     initialState,
     reducers: {
         activeFilterChanged: (state, action) => {
@@ -25,7 +29,7 @@ const filterSlice = createSlice({
     }
 })
 
-const { actions, reducer } = filterSlice;
+const { actions, reducer } = navSlice;
 
 export default reducer;
 

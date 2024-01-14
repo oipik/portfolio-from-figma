@@ -12,7 +12,7 @@ import './app.scss';
 
 function App() {
 
-    const activeState = useSelector(state => state.activeState);
+    const activeState = useSelector(state => state.navSlice.activeState);
 
     const array = [<About/>, <Resume />, <Portfolio />, <Contact />];
 

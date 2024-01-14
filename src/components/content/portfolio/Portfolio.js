@@ -1,50 +1,53 @@
-import Title from "../Title";
+import { useSelector, useDispatch } from "react-redux";
+import { activeFilterState } from "./portfolioSlice";
 
-import smartBankApp from "../../../images/portfolio/smart-bank.png";
-import blog from "../../../images/portfolio/blog.png";
-import uiUx from "../../../images/portfolio/ui-ux.png";
-import mentorship from "../../../images/portfolio/mentorship.png";
-import web from "../../../images/portfolio/web.png";
+import Title from "../Title";
 
 import "./portfolio.scss";
 
 const Portfolio = () => {
+
+    const portfolio = useSelector(state => state.portfolioSlice.portfolio);
+    const activeState = useSelector(state => state.portfolioSlice.active);
+
+    const dispatch = useDispatch();
+
+    const menuItemArray = ["All", "App Development", "Web Development", "Design", "Mentorship"];
+
+    const menuElements = menuItemArray.map((name, i) => {
+        const clazz = name === activeState ? "portfolio__item--active" : null;
+        return (
+            <li className={`portfolio__item ${clazz}`} key={i} onClick={() => dispatch(activeFilterState(name))}>{name}</li>
+        )
+    })
+
+    const getProjects = (data, state) => {
+        return data.filter((item, i) => {
+            if (state === item.way) {
+                return item;
+            } else if (state === "All") {
+                return item;
+            }
+        })
+        .map((item, i) => {
+            return (
+                <div className={`portfolio__project`} key={i}>
+                    <img className="portfolio__img" src={item.src} alt={item.project} />
+                    <p className="portfolio__way">{item.way}</p>
+                    <p className="portfolio__name">{item.project}</p>
+                </div>
+            )
+        })
+    }
+
     return (
         <section className="portfolio">
-            <Title title={"Portfolio"} style={{"marginBottom" : "0"}}/>
+            <Title title={"Portfolio"} style={{ "marginBottom": "0" }} />
             <ul className="portfolio__nav">
-                <li className="portfolio__item">All</li>
-                <li className="portfolio__item">App Development</li>
-                <li className="portfolio__item">Web Development</li>
-                <li className="portfolio__item">Design</li>
-                <li className="portfolio__item">Mentorship</li>
+                {menuElements}
             </ul>
             <div className="portfolio__projects">
-                <div className="portfolio__project">
-                    <img className="portfolio__img" src={smartBankApp} alt="Smart bank app" />
-                    <p className="portfolio__way">App Development</p>
-                    <p className="portfolio__name">Smart Bank App</p>
-                </div>
-                <div className="portfolio__project portfolio__project--heighter">
-                    <img className="portfolio__img" src={blog} alt="Blog" />
-                    <p className="portfolio__way">Blog</p>
-                    <p className="portfolio__name">NEXT.js</p>
-                </div>
-                <div className="portfolio__project">
-                    <img className="portfolio__img" src={uiUx} alt="ui/ux" />
-                    <p className="portfolio__way">UI/UX</p>
-                    <p className="portfolio__name">Rental</p>
-                </div>
-                <div className="portfolio__project portfolio__project--heighter">
-                    <img className="portfolio__img" src={mentorship} alt="Mentorship" />
-                    <p className="portfolio__way">Mentorship</p>
-                    <p className="portfolio__name">Tech Mentor</p>
-                </div>
-                <div className="portfolio__project">
-                    <img className="portfolio__img" src={web} alt="Web Development" />
-                    <p className="portfolio__way">Web Development</p>
-                    <p className="portfolio__name">IdeaFlow</p>
-                </div>
+                {getProjects(portfolio, activeState)}
             </div>
         </section>
     )
