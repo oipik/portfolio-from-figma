@@ -3,12 +3,12 @@ import { home, resume, work, contacts, homeActive, resumeActive, workActive, con
 
 const initialState = {
     data: [
-        { svg: home, svgActive: homeActive, descr: "Home", active: true },
-        { svg: resume, svgActive: resumeActive, descr: "Resume", active: false },
-        { svg: work, svgActive: workActive, descr: "Work", active: false },
-        { svg: contacts, svgActive: contactsActive, descr: "Contact", active: false },
+        { svg: home, svgActive: homeActive, descr: "Home", active: true, id: 1 },
+        { svg: resume, svgActive: resumeActive, descr: "Resume", active: false, id: 2 },
+        { svg: work, svgActive: workActive, descr: "Work", active: false, id: 3 },
+        { svg: contacts, svgActive: contactsActive, descr: "Contact", active: false, id: 4 },
     ],
-    activeState: 0,
+    activeState: 1,
 }
 
 const navSlice = createSlice({
@@ -16,8 +16,8 @@ const navSlice = createSlice({
     initialState,
     reducers: {
         activeFilterChanged: (state, action) => {
-            state.data = state.data.map((item, i) => {
-                if (action.payload === i) {
+            state.data = state.data.map((item) => {
+                if (action.payload === item.id) {
                     item.active = true;
                 } else {
                     item.active = false;

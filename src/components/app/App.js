@@ -25,7 +25,7 @@ function App() {
                     <div className="info">
                         <Nav />
                         {
-                            array[activeState]
+                            array[activeState - 1]
                         }
                     </div>
                 </div>

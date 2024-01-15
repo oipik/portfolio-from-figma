@@ -29,9 +29,9 @@ const Portfolio = () => {
                 return item;
             }
         })
-        .map((item, i) => {
+        .map((item) => {
             return (
-                <div className={`portfolio__project`} key={i}>
+                <div className={`portfolio__project`} key={item.id}>
                     <img className="portfolio__img" src={item.src} alt={item.project} />
                     <p className="portfolio__way">{item.way}</p>
                     <p className="portfolio__name">{item.project}</p>

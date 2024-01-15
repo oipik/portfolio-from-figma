@@ -7,16 +7,16 @@ const Nav = () => {
     const currentData = useSelector(state => state.navSlice.data)
     const dispatch = useDispatch();
 
-    const handleClick = (i) => {
-        dispatch(activeFilterChanged(i));
+    const handleClick = (id) => {
+        dispatch(activeFilterChanged(id));
     }
 
-    const list = currentData.map((item, i) => {
+    const list = currentData.map((item) => {
         return (
             <li
                 className={`nav__item ${item.active ? "nav__item--active" : null}`}
-                key={i}
-                onClick={() => handleClick(i)}>
+                key={item.id}
+                onClick={() => handleClick(item.id)}>
                 <div>
                     <img src={item.active ? item.svgActive : item.svg} alt={item.descr} />
                 </div>

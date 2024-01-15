@@ -4,11 +4,11 @@ import { smartBankApp, blog, uiUx, mentorship, web } from "../../../images/image
 
 const initialState = {
     portfolio: [
-        { src: smartBankApp, way: "App Development", project: "Smart Bank App" },
-        { src: blog, way: "Design", project: "NEXT.js" },
-        { src: uiUx, way: "Design", project: "Rental" },
-        { src: mentorship, way: "Mentorship", project: "Tech Mentor" },
-        { src: web, way: "Web Development", project: "IdeaFlow" },
+        { src: smartBankApp, way: "App Development", project: "Smart Bank App", id: 1 },
+        { src: blog, way: "Design", project: "NEXT.js", id: 2 },
+        { src: uiUx, way: "Design", project: "Rental", id: 3 },
+        { src: mentorship, way: "Mentorship", project: "Tech Mentor", id: 4 },
+        { src: web, way: "Web Development", project: "IdeaFlow", id: 5 },
     ],
     active: "All",
 }
