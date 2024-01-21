@@ -17,12 +17,6 @@
     &__item {
         width: 80px;
         height: 80px;
-        border-radius: 20px;
-        background-color: #E1E8EF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
         cursor: pointer;
         &--active {
             background: linear-gradient(91deg, #FF9C1A 7.92%, #E80505 108.2%);
@@ -37,6 +31,18 @@
         font-style: normal;
         font-weight: 600;
         line-height: 20px;
+        width: inherit;
+        height: inherit;
+        background-color: #E1E8EF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 20px;
+        &--active {
+            background: linear-gradient(91deg, #FF9C1A 7.92%, #E80505 108.2%) !important;
+            color: #FFF
+        }
     }
 }
 

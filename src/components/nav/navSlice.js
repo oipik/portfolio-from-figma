@@ -3,12 +3,11 @@ import { home, resume, work, contacts, homeActive, resumeActive, workActive, con
 
 const initialState = {
     data: [
-        { svg: home, svgActive: homeActive, descr: "Home", active: true, id: 1 },
-        { svg: resume, svgActive: resumeActive, descr: "Resume", active: false, id: 2 },
-        { svg: work, svgActive: workActive, descr: "Work", active: false, id: 3 },
-        { svg: contacts, svgActive: contactsActive, descr: "Contact", active: false, id: 4 },
+        { svg: home, to: "about", svgActive: homeActive, descr: "Home", active: false, id: 1 },
+        { svg: resume, to: "resume", svgActive: resumeActive, descr: "Resume", active: false, id: 2 },
+        { svg: work, to: "portfolio", svgActive: workActive, descr: "Work", active: false, id: 3 },
+        { svg: contacts, to: "contacts", svgActive: contactsActive, descr: "Contacts", active: false, id: 4 },
     ],
-    activeState: 1,
 }
 
 const navSlice = createSlice({
@@ -24,7 +23,6 @@ const navSlice = createSlice({
                 }
                 return item;
             });
-            state.activeState = action.payload;
         }
     }
 })

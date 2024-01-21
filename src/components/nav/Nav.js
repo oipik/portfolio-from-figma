@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { activeFilterChanged } from "./navSlice";
+import { NavLink } from "react-router-dom";
 
 import "./nav.scss";
 
@@ -13,14 +14,14 @@ const Nav = () => {
 
     const list = currentData.map((item) => {
         return (
-            <li
-                className={`nav__item ${item.active ? "nav__item--active" : null}`}
-                key={item.id}
-                onClick={() => handleClick(item.id)}>
-                <div>
+            <li className="nav__item" key={item.id}>
+                <NavLink
+                    to={`/${item.to}`}
+                    className={({ isActive }) => "nav__link " + (isActive ? "nav__link--active" : "")}
+                    onClick={() => handleClick(item.id)}>
                     <img src={item.active ? item.svgActive : item.svg} alt={item.descr} />
-                </div>
-                <a href="#" className="nav__link">{item.descr}</a>
+                    {item.descr}
+                </NavLink>
             </li>
         )
     })

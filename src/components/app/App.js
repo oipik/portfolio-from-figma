@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from '../header/Header';
 import Profile from '../profile/Profile';
@@ -12,25 +12,27 @@ import './app.scss';
 
 function App() {
 
-    const activeState = useSelector(state => state.navSlice.activeState);
-
-    const array = [<About/>, <Resume />, <Portfolio />, <Contact />];
-
     return (
-        <div className="wrapper">
-            <div className="inner">
-                <Header />
-                <div className="content">
-                    <Profile />
-                    <div className="info">
-                        <Nav />
-                        {
-                            array[activeState - 1]
-                        }
+        <Router>
+            <div className="wrapper">
+                <div className="inner">
+                    <Header />
+                    <div className="content">
+                        <Profile />
+                        <div className="info">
+                            <Nav />
+                            <Routes>
+                                <Route path="/" element={null} />
+                                <Route path="about" element={<About />} />
+                                <Route path="resume" element={<Resume />} />
+                                <Route path="portfolio" element={<Portfolio />} />
+                                <Route path="contacts" element={<Contact />} />
+                            </Routes>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </Router>
     );
 }
 
